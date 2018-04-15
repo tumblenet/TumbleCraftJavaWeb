@@ -1,0 +1,28 @@
+{% for post in site.posts limit: include.limit %}
+{% assign authorFilename = post.author | append: '/' | prepend: "/staff/" %}
+{% assign author = site.staff | where:"url", authorFilename | first %}
+<div class="card mb-4">
+  <div class="card-body">
+    <div class="row">
+      {% if post.image %}
+      <div class="col-lg-6">
+        <a href="{{post.url}}">
+          <img class="img-fluid rounded" src="{{posr.image}}" alt="">
+        </a>
+      </div>
+      {% endif %}
+      <div class="col-lg-6">
+        <h2 class="card-title">{{post.title}}</h2>
+        <p class="card-text">{{post.excerpt}}</p>
+        <a href="{{post.url}}" class="btn btn-primary">Read More &rarr;</a>
+      </div>
+    </div>
+  </div>
+  <div class="card-footer text-muted">
+    Posted on {{ post.date | date_to_long_string }} by
+    <a href="{{ author.url }}">
+      <img src="https://crafatar.com/avatars/{{ author.uuid }}?size=16&overlay" alt="">
+      {{ author.title }}</a>
+  </div>
+</div>
+{% endfor %}

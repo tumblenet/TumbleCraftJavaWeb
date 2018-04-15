@@ -1,0 +1,15 @@
+- name: About
+  href: /about
+- name: Modes
+  href: /servers
+- name: Places
+  submenu:
+    - name: Landmarks
+      href: /landmarks
+    - name: Player Builds
+      href: /playerbuilds
+- name: News
+  href: /news
+- name: Apply
+- name: Vote
+- name: Discord

@@ -1,0 +1,87 @@
+---
+layout: default
+---
+<header>
+  <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      {% for f in site.featured %}
+      <li data-target="#carouselExampleIndicators" data-slide-to="{{forloop.id}}"></li>
+      {% endfor %}
+    </ol>
+    <div class="carousel-inner" role="listbox">
+      <!-- Slide One - Set the background image for this slide in the line below -->
+      {% for f in site.featured %}
+      <div class="carousel-item active" style="background-image: url('{{f.image}}')">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>{{f.title}}</h3>
+          <p>{{f.content}}</p>
+        </div>
+      </div>
+      {% endfor %}
+      <!-- Slide Two - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Second Slide</h3>
+          <p>This is a description for the second slide.</p>
+        </div>
+      </div>
+      <!-- Slide Three - Set the background image for this slide in the line below -->
+      <div class="carousel-item" style="background-image: url('http://placehold.it/1900x1080')">
+        <div class="carousel-caption d-none d-md-block">
+          <h3>Third Slide</h3>
+          <p>This is a description for the third slide.</p>
+        </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</header>
+
+<!-- Page Content -->
+<div class="container">
+
+  <h1 class="my-4">Welcome to {{site.title}}</h1>
+  <!-- Call to Action Section -->
+  <div class="row mb-4">
+    <div class="col-md-1">
+      <p>IP:</p>
+    </div>
+    <div class="col-md-4">
+      <a class="btn btn-lg btn-secondary btn-block" href="#">mc.tumblenet.ga</a>
+    </div>
+  </div>
+  <!-- Marketing Icons Section -->
+  <div class="row">
+    {% include post-list.html limit=3 %}
+  </div>
+  <!-- /.row -->
+
+  <!-- Features Section -->
+  <div class="row">
+    <div class="col-lg-6">
+      {{ content }}
+    </div>
+    {% if page.image %}
+    <div class="col-lg-6">
+      <img class="img-fluid rounded" src="{{ page.image }}" alt="">
+    </div>
+    {% endif %}
+  </div>
+  <!-- /.row -->
+
+  <hr>
+  <!-- Portfolio Section -->
+  <h2>Landmarks</h2>
+
+  {% include 2wide-list.html array=site.landmarks %}
+  <!-- /.row -->
+
+</div>
+<!-- /.container -->

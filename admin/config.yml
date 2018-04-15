@@ -1,0 +1,101 @@
+backend:
+  name: test-repo
+  repo: tumblenet/TumbleCraftWeb
+  base_url: https://tumblenet-api.herokuapp.com
+
+#publish_mode: editorial_workflow
+media_folder: "uploads" # Media files will be stored in the repo under images/uploads
+
+collections:
+  - name: "posts" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Posts" # Used in the UI
+    label_singular: "Post" # Used in the UI, ie: "New Post"
+    folder: "_posts"
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "post"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Publish Date", name: "date", widget: "datetime", format: "YYYY-MM-DD hh:mma"}
+      - {label: "Author", name: "author", widget: "string", tagname: "p"}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "markdown"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "pages" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Pages" # Used in the UI
+    label_singular: "Page" # Used in the UI, ie: "New Post"
+    folder: "/"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "page"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "servers" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Servers" # Used in the UI
+    label_singular: "Server" # Used in the UI, ie: "New Post"
+    folder: "_servers"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "showcase"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "landmarks" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Landmarks" # Used in the UI
+    label_singular: "Landmark" # Used in the UI, ie: "New Post"
+    folder: "_landmark"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "showcase"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "userbuilds" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "User Builds" # Used in the UI
+    label_singular: "User Build" # Used in the UI, ie: "New Post"
+    folder: "_userbuilds"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Layout", name: "layout", widget: "hidden", default: "showcase"}
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Subtitle", name: "subtitle", widget: "string"}
+      - {label: "Excerpt", name: "excerpt", widget: "markdown"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "home-slides" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Home Slides" # Used in the UI
+    label_singular: "Home Slide" # Used in the UI, ie: "New Post"
+    folder: "_featured"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "Cover Image", name: "image", widget: "image", required: false, tagname: ""}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+  - name: "staff" # Used in routes, ie.: /admin/collections/:slug/edit
+    label: "Staff" # Used in the UI
+    label_singular: "Staff Member" # Used in the UI, ie: "New Post"
+    folder: "_staff"
+    slug: "{{slug}}"
+    create: true # Allow users to create new documents in this collection
+    fields: # The fields each document in this collection have
+      - {label: "Title", name: "title", widget: "string", tagname: "h1"}
+      - {label: "UUID", name: "uuid", widget: "string"}

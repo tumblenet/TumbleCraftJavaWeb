@@ -1,0 +1,22 @@
+---
+layout: basic
+---
+{% assign collection = site.collections | where:"label", page.collection | first %}
+<!-- Page Heading/Breadcrumbs -->
+<h1 class="mt-4 mb-3">{{page.title}}
+  <small>{{page.subtitle}}</small>
+</h1>
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="index.html">Home</a>
+  </li>
+  {% if page.collection %}
+  <li class="breadcrumb-item">
+    <a href="{{collection.url}}">{{collection.label | capitalize }}</a>
+  </a>
+  {% endif %}
+  <li class="breadcrumb-item active">{{page.title | capitalize }}</li>
+</ol>
+
+{{content}}

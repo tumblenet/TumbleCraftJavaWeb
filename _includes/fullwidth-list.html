@@ -1,0 +1,22 @@
+{% for item in include.array limit: include.limit %}
+<div class="row">
+  {% if item.image %}
+  <div class="col-md-7">
+    <a href="{{item.url}}">
+      <img class="img-fluid rounded mb-3 mb-md-0" src="{{item.image}}" alt="">
+    </a>
+  </div>
+  {% endif %}
+  <div class="col-md-5">
+    <h3>{{item.title}}</h3>
+    <p>{{item.excerpt}}</p>
+    <a class="btn btn-primary" href="{{item.url}}">View More
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
+</div>
+
+{% unless forloop.last %}
+<hr>
+{% endunless %}
+{% endfor %}
