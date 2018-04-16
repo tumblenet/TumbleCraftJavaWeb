@@ -101,3 +101,4 @@ collections:
     fields: # The fields each document in this collection have
       - {label: "Title", name: "title", widget: "string", tagname: "h1"}
       - {label: "UUID", name: "uuid", widget: "string"}
+      - {label: "Rank", name: "rank", widget: "string"}
