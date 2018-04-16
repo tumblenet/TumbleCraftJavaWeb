@@ -2,7 +2,7 @@
   href: /about
 - name: Modes
   href: /servers
-- name: Places
+- name: Builds
   submenu:
     - name: Landmarks
       href: /landmarks
@@ -11,6 +11,8 @@
 - name: News
   href: /news
 - name: Apply
+  href: /apply
 - name: Vote
+  href: /vote
 - name: Discord
   href: https://discord.gg/mRtyJA9
