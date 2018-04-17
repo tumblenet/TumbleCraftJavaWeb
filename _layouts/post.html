@@ -8,7 +8,7 @@ layout: basic
 <h1 class="mt-4 mb-3">{{page.title}}
 <small>by
   <img src="https://crafatar.com/renders/head/{{ author.uuid }}?scale=2&overlay" alt=""></img>
-  <a href="{{ author.url }}">{{ author.title }}</a>
+  <a href="{{ author.url }}">{% include display-name.html rank=author.rank %}</a>
 </small>
 </h1>
 <ol class="breadcrumb">
