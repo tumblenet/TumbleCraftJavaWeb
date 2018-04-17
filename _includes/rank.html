@@ -1,1 +1,1 @@
-<span class="mc-{{site.data.ranks[include.rank].color}}">[{{site.data.ranks[include.rank].display}}]</span>
+{% assign rank = site.data.ranks | where:"id", include.rank | first %}{% if rank.color %}<span class="mc-{{rank.color}}">[{{rank.display}}]</span>{% else %}{% if include.force %}<span class="mc-0">[{{rank.display}}]</span>{% endif %}{% endif %}

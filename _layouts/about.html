@@ -1,9 +1,15 @@
 ---
 layout: page
+disableimage: true
 ---
 
 <!-- Intro Content -->
 <div class="row">
+  {% if page.image %}
+  <div class="col-lg-6">
+    <img class="img-fluid rounded mb-4" src="{{ page.image }}" alt="">
+  </div>
+  {% endif %}
   <div class="col-lg-6">
     <h2>About {{site.title}}</h2>
     {{content}}
@@ -13,25 +19,32 @@ layout: page
 
 <!-- Team Members -->
 <h2>Our Team</h2>
-
+{% for rank in site.data.ranks %}
+{% assign staff = site.staff | where:"rank",rank.id %}
+{% for member in staff %}
+{% if forloop.first %}
+<h3>{% include rank.html rank=rank.id force=true %}</h3>
 <div class="row">
-  {% for staff in site.staff %}
-  <div class="col-lg-4 mb-4">
+{% endif %}
+  <div class="col-lg-5 mb-3">
     <div class="card h-100 text-center">
-      <img class="card-img-top" src="https://crafatar.com/renders/head/{{staff.uuid}}?scale=10&overlay" alt="">
+      <img class="card-img-top" src="https://crafatar.com/renders/head/{{member.uuid}}?scale=10&overlay" alt="">
       <div class="card-body">
-        <h4 class="card-title">{% include username.html rank=staff.rank user=staff.title %}</h4>
-        <h6 class="card-subtitle mb-2 text-muted">{% include rank.html rank=staff.rank %}</h6>
-        <p class="card-text">{{ staff.content }}</p>
+        <h4 class="card-title">{% include username.html rank=member.rank user=member.title %}</h4>
+        <h6 class="card-subtitle mb-2 text-muted">{% include rank.html rank=member.rank %}</h6>
+        <p class="card-text">{{ member.content }}</p>
       </div>
       <!--<div class="card-footer">
         <a href="#">name@example.com</a>
       </div>-->
     </div>
   </div>
-  {% endfor %}
+{% if forloop.last %}
 </div>
 <!-- /.row -->
+{% endif %}
+{% endfor %}
+{% endfor %}
 
 <!-- Our Customers
 <h2>Our Customers</h2>

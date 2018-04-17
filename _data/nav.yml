@@ -10,9 +10,11 @@
       href: /playerbuilds
 - name: News
   href: /news
-- name: Apply
-  href: /apply
-- name: Vote
-  href: /vote
+- name: Builds
+  submenu:
+  - name: Vote
+    href: /vote
+  - name: Apply
+    href: /apply
 - name: Discord
   href: https://discord.gg/mRtyJA9

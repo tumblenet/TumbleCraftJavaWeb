@@ -20,11 +20,15 @@ layout: basic
 </ol>
 <!-- Post Content Column -->
   <div class="col-lg-8">
+    {% unless page.disableimage %}
+      {% unless layout.disableimage %}
 {% if page.image %}
     <!-- Preview Image -->
     <img class="img-fluid rounded" src="{{ page.image }}" alt="">
 
     <hr>
 {% endif %}
+{% endunless %}
+{% endunless %}
 {{content}}
 </div>

@@ -1,1 +1,1 @@
-<span class="mc-{{site.data.ranks[include.rank].prefix }}">{{ include.user }}</span>
+{% assign rank = site.data.ranks | where:"id", include.rank | first %}<span class="mc-{{rank.prefix }}">{{ include.user }}</span>
