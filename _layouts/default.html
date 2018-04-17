@@ -18,7 +18,15 @@ layout: null
 
     <!-- Custom styles for this template -->
     <link href="/css/modern-business.css" rel="stylesheet">
-
+    <link rel="stylesheet" href="/css/minecraft.css">
+    {% if page.image %}{%if page.image == site.logo %}
+    {{ seo }}
+    {% else %}
+    {{ seo | replace: "summary", "summary_large_image" }}
+    {% endif %}
+    {% else %}
+    {{ seo }}
+    {% endif %}
   </head>
 
   <body>
