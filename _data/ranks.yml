@@ -1,3 +1,28 @@
-owner:
-  display: "Owner"
-  color: "c"
+admin:
+  display: Admin
+  color: c
+  prefix: c
+mod:
+  display: Mod
+  color: 2
+  prefix: a
+helper:
+  display: Helper
+  color: 1
+  prefix: 9
+builder:
+  display: Builder
+  color: 6
+  prefix: e
+vip:
+  display: <span class="mc-a">VIP</span>
+  color: b
+  prefix: f
+voter:
+  display: Voter
+  color: b
+  prefix: f
+member:
+  display: Member
+  color: f
+  prefix: 7
