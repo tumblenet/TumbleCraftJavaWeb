@@ -26,3 +26,7 @@ member:
   display: Member
   color: f
   prefix: 7
+owner:
+  display: Owner
+  color: 4
+  prefix: c
