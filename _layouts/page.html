@@ -18,5 +18,13 @@ layout: basic
   {% endif %}
   <li class="breadcrumb-item active">{{page.title | capitalize }}</li>
 </ol>
+<!-- Post Content Column -->
+  <div class="col-lg-8">
+{% if page.image %}
+    <!-- Preview Image -->
+    <img class="img-fluid rounded" src="{{ page.image }}" alt="">
 
+    <hr>
+{% endif %}
 {{content}}
+</div>
