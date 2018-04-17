@@ -16,8 +16,20 @@
 &e - #fefe3f
 &f - #ffffff
 */
+@font-face {
+	font-family: 'minecraftia';
+	src: url('fonts/Minecraftia-Regular.ttf');
+	src:
+		local('Minecraftia'),
+		local('Minecraftia'),
+		url('fonts/Minecraftia-Regular.ttf')
+		format('opentype');
+}
+div[class^="mc-"] {
+    font-family: 'minecraftia', sans-serif;
+}
 
-.mc-0 {
+.mc-f {
   color: #000000;
 }
 
@@ -45,11 +57,11 @@
   color: #d9a334;
 }
 
-.mc-7 {
+.mc-8 {
   color: #bebebe;
 }
 
-.mc-8 {
+.mc-7 {
   color: #3f3f3f;
 }
 
@@ -77,6 +89,6 @@
   color: #fefe3f;
 }
 
-.mc-f {
+.mc-0 {
   color: #ffffff;
 }
