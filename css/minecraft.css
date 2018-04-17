@@ -25,7 +25,7 @@
 		url('fonts/Minecraftia-Regular.ttf')
 		format('opentype');
 }
-div[class^="mc-"] {
+[class^="mc-"] {
     font-family: 'minecraftia', sans-serif;
 }
 
