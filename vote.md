@@ -2,7 +2,7 @@
 layout: page
 title: Vote
 ---
-### [Voter] rank features'
+### {% include rank.html rank="voter" %} rank features'
 - Diamonds
 - Custom Nickname
 - Mob head drops
