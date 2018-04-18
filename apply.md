@@ -10,9 +10,9 @@ image: /uploads/2018-04-16_20.07.27.png
     {% endfor %}
 </div>
 </div>
-<br>
-<br>
-<p>I want {% include rank.html rank="voter" %}: [click here](/vote)</p>
-<br>
-<br>
+
+
+I want {% include rank.html rank="voter" %}: [click here](/vote)
+
+
 <iframe src="https://goo.gl/forms/ZaJMArEi4B9bIPy33" frameborder="0" width="100%" height="100%" marginheight="0" marginwidth="0" seamless="true" style="overflow: scroll;height: -webkit-fill-available;width: -webkit-fill-available;" >Loading...</iframe>
